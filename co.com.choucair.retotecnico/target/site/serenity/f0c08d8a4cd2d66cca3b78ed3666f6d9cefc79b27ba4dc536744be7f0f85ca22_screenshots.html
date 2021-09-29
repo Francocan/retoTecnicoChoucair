@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Demo Project using Serenity and Cucumber</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="44d0142c33a45362384e3400fd1cd6a81b6d766f4f3557b21495576eb14b94fe.html">Carry Out The Completion Of The Form In Order To Create A New Username.</a></span>
+                > <span class="truncate-60"><a
+                    href="f0c08d8a4cd2d66cca3b78ed3666f6d9cefc79b27ba4dc536744be7f0f85ca22.html">the form will be filled out </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 28-09-2021 20:17</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Carry Out The Completion Of The Form In Order To Create A New Username. </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="e4ef4831a220e0a9cbdbfec794f5c31b3fef2adf1cb8126df1cc35a6f525969c.html">Scenario1
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="8e3b9bd5eba0a2d944ce7d2a73335e57289cd25f71e556e1618e946dc87d7ec9.html">Stories
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">the form will be filled out
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given Steven will create a new user<br><table class='embedded'><thead><th>firstname</th><th>lastname</th><th>email</th><th>city</th><th>postal</th><th>password</th></thead><tbody><tr><td>&lt;firstname&gt;</td><td>&lt;lastname&gt;</td><td>&lt;email&gt;</td><td>&lt;city&gt;</td><td>&lt;postal&gt;</td><td>&lt;password&gt;</td></tr></tbody></table><br>When Steven will into sign up<br><table class='embedded'><thead><th>email</th><th>password</th></thead><tbody><tr><td>&lt;email&gt;</td><td>&lt;password&gt;</td></tr></tbody></table><br>Then Steven will verify account<br><table class='embedded'><tbody><tr><td>email</td></tr><tr><td>&lt;email&gt;</td></tr></tbody></table></div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="e93230c7570d9ff8d9942031ddafdb9c897dd61f6d3728a396b8d909eac81c49.png" title=" Example: {firstname=Estiven, lastname=Franco, email=libelula98@hotmail.com, city=Medellin, Antioquia, Colombia, postal=050001, password=Lolalamejor7010+}" width="1366"/>
+                <img src="e93230c7570d9ff8d9942031ddafdb9c897dd61f6d3728a396b8d909eac81c49.png" title=" Given Steven will create a new user
+| firstname | lastname | email | city | postal | password |
+| Estiven | Franco | libelula98@hotmail.com | Medellin, Antioquia, Colombia | 050001 | Lolalamejor7010+ |" width="1366"/>
+                <img src="e93230c7570d9ff8d9942031ddafdb9c897dd61f6d3728a396b8d909eac81c49.png" title=" Steven open up" width="1366"/>
+                <img src="e93230c7570d9ff8d9942031ddafdb9c897dd61f6d3728a396b8d909eac81c49.png" title=" Steven opens the Utestweb" width="1366"/>
+                <img src="0dc62299e8d1e6d60ac77ddb1ffca82b6a3ad4f70d45e81811b816fe769215e9.png" title=" Steven clicks on Join Today" width="1366"/>
+                <img src="0dc62299e8d1e6d60ac77ddb1ffca82b6a3ad4f70d45e81811b816fe769215e9.png" title=" Steven open up (completed)" width="1366"/>
+                <img src="6f479b032e62b1dc5d0e6d0f09e39fe1da48b910ab7d79a47314e7f2b3c5084b.png" title=" Steven logindata" width="1366"/>
+                <img src="6f479b032e62b1dc5d0e6d0f09e39fe1da48b910ab7d79a47314e7f2b3c5084b.png" title=" Steven enters 'Estiven' into FIRST NAME" width="1366"/>
+                <img src="798f6e9fd7e8b18a1e010d5d144c8b34a2826e59075bd7bdd15049b3bccff811.png" title=" Steven enters 'Franco' into LAST NAME" width="1366"/>
+                <img src="fd0ea7bac7b939b573c5789f5ac8a4f6e6684c20dc8162f970b827aafec099a1.png" title=" Steven enters 'libelula98@hotmail.com' into EMAIL" width="1366"/>
+                <img src="66cf57daf91357fc111b20d8bf142d00a04214c4b0778b19bd078da405754744.png" title=" Steven clicks on DATE OF BIRTH" width="1366"/>
+                <img src="3c5f4cb9cdbea5bfd2c11f85fa5750b5f80c6a1a402ddc69d60b2caf19f5b9c2.png" title=" Steven select January on DATE OF BIRTH" width="1366"/>
+                <img src="6b8d760129d6308a5a6e603a3ecab48ceaec7491b782c217d89380fbf9c29715.png" title=" Steven select 6 on DAY" width="1366"/>
+                <img src="27042800366c55b20f64fab0458058fc56e8884acc71632dc6361aa5f9d84de8.png" title=" Steven select 1996 on YEAR" width="1366"/>
+                <img src="b070f03600b102925b627eade4497953768f37af83175ab1f11af1a480b79c35.png" title=" Steven clicks on LANGUAGES" width="1366"/>
+                <img src="803da8b988423467b290b90565b72bc762d9ac64152e453d9de368bc2392f64a.png" title=" Steven clicks on NEXT LOCATION" width="1366"/>
+                <img src="35066ae34260eaa909a127e1b6966152f5b06d3f53b5d259eb14b5919176a850.png" title=" Steven clicks on CITY" width="1366"/>
+                <img src="adf62666fbc740177338c45c76cde61ee4eb2a3d68dd7f0d5a1f056406acc051.png" title=" Steven enters 'Medellin, Antioquia, Colombia' into CITY" width="1366"/>
+                <img src="61e0702f4b1456966c3f93fc6cb7aa3b9a75fd8a6d354b3bb7dee56b7eaf04ed.png" title=" Steven types 'ARROW_DOWN' in CITY" width="1366"/>
+                <img src="0f23d6ec96f2954d15081a6db6ede0acaa02016e11d2c7f0e37f49625490d476.png" title=" Steven clicks on POSTAL" width="1366"/>
+                <img src="18ca5bfecf5de8dbc4e203e29e4089657dcfd2c887f9c0ecdd2f3eeba03708eb.png" title=" Steven enters '050001' into POSTAL" width="1366"/>
+                <img src="5025c59dcd2c8e15305c9fe644134f448dc28eea597f674cbb49ccecd066909c.png" title=" Steven clicks on COUNTRY" width="1366"/>
+                <img src="00c8d3979c7150aca5e0a977161c13cdbb346b714cd692f20c33f71f88e7634e.png" title=" Steven clicks on NEXT DEVICE" width="1366"/>
+                <img src="f3d84a0e87aa54d0a9f380aba39884c6693d2fd304aeb145064557b121211be4.png" title=" Steven clicks on YOUR COMPUTER" width="1366"/>
+                <img src="9fabe5ced8386d4b3d02e33c2fcb01aa9d67816c56ff87b87bbcdce21286447b.png" title=" Steven clicks on VERSION" width="1366"/>
+                <img src="72d7c19f125825ea238a8bd7776b5de95924e9cb3e532d8380071c2015b3b49b.png" title=" Steven clicks on LANGUAGE2" width="1366"/>
+                <img src="043cb4016c6f7291e181b83c0e335bb185110af717dbf3ac981f993aa7bfc69e.png" title=" Steven clicks on YOUR MOBILE DEVICE" width="1366"/>
+                <img src="453635134e614c474c201b1098b7854993da99ecc7f5bfc0712a5909646c1d43.png" title=" Steven clicks on MODEL" width="1366"/>
+                <img src="5e8173d2f954bcb2f98c21179a3c7172d7297bd9a7fcc764eedd4d248703c86f.png" title=" Steven enters 'iPhone 4' into MODEL 4" width="1366"/>
+                <img src="4435f246dbb5f189f488d319e883d22cc2e9a93fde346e7d683f4b800437f872.png" title=" Steven clicks on CLICK_IPHONE" width="1366"/>
+                <img src="2de7f18c715c8eb9c80808295d106173d3716ea3075aad9e8efd125974e3f4e9.png" title=" Steven clicks on CLICK EN OPSYS" width="1366"/>
+                <img src="d53e1dad38c05516af06c31e318ebfa0a26cd006136dada533662b8e7ed89c3f.png" title=" Steven enters 'iOS 11.3' into CLICK EN IOS" width="1366"/>
+                <img src="23eb526bff8967fa4f18525dec4802910b05eee9b9bfb12c7faa246edcb2823c.png" title=" Steven clicks on CLICK EN IOS 11.3" width="1366"/>
+                <img src="164aad1e913e124a04af78a7603ccdc85a2ef849e02a70dbee19b8e48cfb1932.png" title=" Steven clicks on NEXT DEVICE" width="1366"/>
+                <img src="fd27aa8418792fcd3e6b4ab868834dc9b9dd794b0dfea9336037c2ddde0df5bc.png" title=" Steven clicks on CLICK PASSWORD" width="1366"/>
+                <img src="0d89895b0d0e5d4329ac0ad59399bfa19c03b7481c5bb4bcc85e5a234ff64524.png" title=" Steven enters 'Lolalamejor7010+' into CLICK PASSWORD" width="1366"/>
+                <img src="9417d65abade97b8b6bcc02b138833fb6ec25e148b2ff1dfc58866177710563a.png" title=" Steven clicks on CONFIRM PASSWORD_CONFIRM" width="1366"/>
+                <img src="36a177bea608339412ef0ef0f79007f5655a47f5c800e2deb205c2c483324019.png" title=" Steven enters 'Lolalamejor7010+' into CONFIRM PASSWORD_CONFIRM" width="1366"/>
+                <img src="ae0d6a1ff0ed8b71c7b4a3d3ebea6fc141118be9dd0295678a4482568c9c3234.png" title=" Steven clicks on CLICK ACCEPT" width="1366"/>
+                <img src="ab9875773ee71776addd7c3ce38754af1a4ba67b03bdde59d2039ff13999ecd4.png" title=" Steven clicks on CLICK PRIVACY" width="1366"/>
+                <img src="17f1a9980a8d57c697099856bf42632b800f35e8c66ffd557f0ec794fadab82b.png" title=" Steven clicks on COMPLETE SETUP" width="1366"/>
+                <img src="3394cf0e4448911a5c81a6fc8592497ffa43d120ce53c9bccb5f32d53e84cc69.png" title=" Steven clicks on SIGN IN" width="1366"/>
+                <img src="3394cf0e4448911a5c81a6fc8592497ffa43d120ce53c9bccb5f32d53e84cc69.png" title=" Steven logindata (completed)" width="1366"/>
+                <img src="3394cf0e4448911a5c81a6fc8592497ffa43d120ce53c9bccb5f32d53e84cc69.png" title=" Given Steven will create a new user
+| firstname | lastname | email | city | postal | password |
+| Estiven | Franco | libelula98@hotmail.com | Medellin, Antioquia, Colombia | 050001 | Lolalamejor7010+ | (completed)" width="1366"/>
+                <img src="60baebd4e511e3a7de44a79de55de4cc49c45753ee3ef8226cd602718f81ffcc.png" title=" When Steven will into sign up
+| email | password |
+| libelula98@hotmail.com | Lolalamejor7010+ |" width="1366"/>
+                <img src="60baebd4e511e3a7de44a79de55de4cc49c45753ee3ef8226cd602718f81ffcc.png" title=" Steven enter account" width="1366"/>
+                <img src="60baebd4e511e3a7de44a79de55de4cc49c45753ee3ef8226cd602718f81ffcc.png" title=" Steven clicks on EMAIL ADDRESS" width="1366"/>
+                <img src="a6c1bacd1e3f101fe5e9a083feaeb509991aba87e5a7ff3972ed33785d3b359d.png" title=" Steven enters 'libelula98@hotmail.com' into EMAIL ADDRESS" width="1366"/>
+                <img src="c3fc89261472c3db4eaa9467cc75923066d393fe32e18325d0016e7900162f13.png" title=" Steven clicks on  ENTER PASSWORD" width="1366"/>
+                <img src="2f51ff189f371bb21508b230b06bd767d85a8801255a2a806e8b1d376a3b63e2.png" title=" Steven enters 'Lolalamejor7010+' into  ENTER PASSWORD" width="1366"/>
+                <img src="6392ab80d43c26d2f4d6c4e003baf2a3016b136425c5c1dfe50df79e4c67194f.png" title=" Steven clicks on SIGN IN" width="1366"/>
+                <img src="6392ab80d43c26d2f4d6c4e003baf2a3016b136425c5c1dfe50df79e4c67194f.png" title=" When Steven will into sign up
+| email | password |
+| libelula98@hotmail.com | Lolalamejor7010+ |" width="1366"/>
+                <img src="6392ab80d43c26d2f4d6c4e003baf2a3016b136425c5c1dfe50df79e4c67194f.png" title=" Steven enter account (completed)" width="1366"/>
+                <img src="6392ab80d43c26d2f4d6c4e003baf2a3016b136425c5c1dfe50df79e4c67194f.png" title=" Then Steven will verify account
+| email |
+| libelula98@hotmail.com |" width="1366"/>
+                <img src="6392ab80d43c26d2f4d6c4e003baf2a3016b136425c5c1dfe50df79e4c67194f.png" title=" Then answer" width="1366"/>
+                <img src="6392ab80d43c26d2f4d6c4e003baf2a3016b136425c5c1dfe50df79e4c67194f.png" title=" Example: {firstname=Estiven, lastname=Franco, email=libelula98@hotmail.com, city=Medellin, Antioquia, Colombia, postal=050001, password=Lolalamejor7010+}" width="1366"/>
+                <img src="6392ab80d43c26d2f4d6c4e003baf2a3016b136425c5c1dfe50df79e4c67194f.png" title=" Then Steven will verify account
+| email |
+| libelula98@hotmail.com | (completed): <span class='success-color'>SUCCESS</span>" width="1366"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.0</span>
+</div>
+</body>
+</html>
